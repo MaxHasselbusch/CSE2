@@ -40,7 +40,7 @@ public class Cyclometer{
         distanceTrip2=countsTrip2*wheelDiameter*PI/inchesPerFoot/feetPerMile; //calculates distance of trip 2
         totalDistance=distanceTrip1+distanceTrip2; //calculates total distance
         
-            //Print out the output data.
+            //Print out the output data
             System.out.println("Trip 1 was "+distanceTrip1+" miles"); //distance for trip 1
             System.out.println("Trip 2 was "+distanceTrip2+" miles"); //distance for trip 2
             System.out.println("The total distance was "+totalDistance+" miles"); //total distance for both trips
