@@ -23,11 +23,15 @@ public class MoreLoops {
 
         System.out.print("Enter an int- ");
         
-        while (!scan.hasNextInt()) {
+        do{
+            if(!scan.hasNextInt()){
             
             scan.next(); //get rid of the junk entered by user
+        
             System.out.print("You did not enter an int; try again- ");
-        }
+            }
+            
+        } while (!scan.hasNextInt());
         
         //COMMENT OUT THE ABOVE 5 LINES AND REPLACE THE CODE WITH A
         //DO-WHILE LOOP
@@ -43,13 +47,20 @@ public class MoreLoops {
 //Loop 2 -----------------------------------------------------------------------
 
         n = scan.nextInt();
-
-        for (int j = 0; j < n && j < 40; j++) {
+        
+        int j = 0;
+        
+        
+        while(  j < n && j < 40) {
             
-            for (int k = 0; k < j + 1; k++) {
+            int k = 0;
+            
+            while (k < (j + 1)) {
                 System.out.print('*');
+                k++;
             }
             
+            j++;
             System.out.println();
         }
         
@@ -57,9 +68,9 @@ public class MoreLoops {
         //WHILE STATEMENTS
         
          /*
-        *
-        *
-        *
+        * The above code assigns the input value to n, the creates other integers
+        * such as j and k.  It prints out the number of stars entered in consecutive 
+        * rows of increasing number of stars.
         *
         */
 
@@ -67,46 +78,64 @@ public class MoreLoops {
 
         int k = 4;
 
-        do {
+       while (k <= 4){
+           
             System.out.println("k=" + k);
             k++;
         }
-        while (k < 4);
+        
         
         //COMMENT OUT THE ABOVE FIVE LINES AND REPLACE THE CODE
         //WITH A WHILE LOOP
         
          /*
-        *
-        *
+        * This code assigns the value of 4 to a new integer, k.  It then prints
+        * out k = 4 once.
         *
         *
         */
         
 //Loop 4------------------------------------------------------------------------     
 
-        int count = 0;
+    
         
-        while (true) {
-            switch (n) {
-                default: System.out.println(n + " is > 5 or <1");
+        for (int count = 0; count <= 10; count++){
+            
+            for(boolean var = true; var == true;){
+                if( n > 5 || n < 1){
+                    System.out.println(n + " is > 5 or <1");
+                }
+                if (n == 1){
+                   System.out.print("Case 2 ");
+                
+                   continue;
+                }
+                if (n == 2){
+                   System.out.print("Case 2");
+                   continue;
+                }
+                if(n == 3){
                     break;
-                case 1:
-                case 2:
-                    System.out.print("Case 2 ");
-                    continue;
-                case 3:
-                    break;
-                case 4:
+                }
+                if(n == 4){
                     System.out.println("Case 4");
-                case 5:
                     System.out.println("Case 5");
                     break;
+                }
+                if(n ==5){
+                    System.out.println("Case 5");
+                    break;
+                }
+                if (count == 10){
+                    break;
+                }
+        
+              
             }
-            count++;
-            if (count > 10)
-                break;
-        }
+            
+        
+            }
+        
         
         //COMMENT OUT THE ABOVE 16 LINES AND REWRITE THE CODE USING
         // ONLY FOR LOOPS AND IF STATEMENS. BEFORE DOING SO, TRY
@@ -116,10 +145,11 @@ public class MoreLoops {
         //SIMULTANEOUSLY PRESSING THE CTRL KEY AND THE C KEY
         
          /*
-        *
-        *
-        *
-        *
+        * The above code checks to see whether or not n is greater than 5 or
+        * less than 1. By default, it prints that n is greater than 5 or less than
+        * 1 and only goes to the other statements if n is 1, 2, 3, 4, or 5.  
+        * It cycles through this 10 times unless a 2 or 1 is entered, which
+        * will cause an infinite loop of case 2.
         */
 
 //------------------------------------------------------------------------------

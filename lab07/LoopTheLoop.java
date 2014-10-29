@@ -16,87 +16,85 @@ public class LoopTheLoop {
             //declare the scanner
             Scanner starScanner = new Scanner(System.in);
 
-            while (true) {
 
-                //initialize variables
-                String star = "";
-                int nStars = -1;
+            //initialize variables
 
-                //create first loop to check for nStars
-                while (nStars < 1 || nStars > 15) {
+            int nStars = -1;
+            String star = "";
 
-                    //ask user for imput
-                    System.out.print("Enter number of stars in the range of 1-15: ");
+            //create first loop to check for nStars
+            while (nStars < 1 || nStars > 15) {
 
-                    //check to make sure that the input is an int
-                    if (starScanner.hasNextInt()) {
+                //ask user for imput
+                System.out.print("Enter number of stars in the range of 1-15: ");
 
-                        //assign input to a variable
-                        nStars = starScanner.nextInt();
+                //check to make sure that the input is an int
+                if (starScanner.hasNextInt()) {
 
-                        if (nStars >= 1 && nStars <= 15) {
-                            
-                            //create while loop for printing stars
-                            while (nStars > 0) {
+                    //assign input to a variable
+                    nStars = starScanner.nextInt();
+
+                    if (nStars >= 1 && nStars <= 15) {
+
+                        nStars = nStars;
+
+
+                        //create while loop for printing stars
+                        while (nStars > 0) {
+                            int nStars1 = nStars;
+
+                            while (nStars1 > 0) {
                                 System.out.print("*");
-                                }
-                                //skip to new line
-                                System.out.println();
+                                nStars1--;
+                            }
 
-                                while (nStars > 0) {
-                                    star += "*";
-                                    System.out.println(star);
+                            //skip to new line
+                            System.out.println();
 
-                                } //end of second while loop
+                            while (nStars > 0) {
+                                star += "*";
+                                System.out.println(star);
                                 nStars--;
-                            } //end of while loop
 
-
-
-                            //ask user to go again
-                            System.out.print("Enter Y or y to go again: ");
-
-                            //check what user typed
-                            if (starScanner.hasNext()) {
-
-                                //assign the input to a string
-                                String input = starScanner.next();
-
-                                //make a switch statement to do something with the input
-                                switch (input) {
-
-                                    case "y":
-                                    case "Y":
-                                        continue;
-                                    default:
-                                        break;
-
-                                } //end of switch
-
-
-                            } //end of if statement
-
-
-
-                        } //end of if statement
-                        else {
-                            System.out.println("You did not enter a valid int");
+                            } //end of second while loop
                         }
+                        star = "";
+
+                        //ask user to go again
+                        System.out.print("Enter Y or y to go again: ");
+
+                        //check what user typed
+                        if (starScanner.hasNext()) {
+
+                            //assign the input to a string
+                            String input = starScanner.next();
+
+                            //make a switch statement to do something with the input
+                            switch (input) {
+
+                                case "y":
+                                case "Y":
+                                    continue;
+                                default:
+                                    break;
+
+                            } //end of switch
+
+                            return;
+                        } //end of if statement
+
+
 
                     } //end of if statement
                     else {
-                        System.out.println("You did not enter an int");
-                        return;
-                    } //end of else statement
+                        System.out.println("You did not enter a valid int");
+                    }
 
-
-
-
-                } //end of while loop checking status of nStars
-
-
-            } //end of while statement
-
-
+                } //end of if statement
+                else {
+                    System.out.println("You did not enter an int");
+                    return;
+                } //end of else statement
+            }
         } //end of main method
 } //end of class
