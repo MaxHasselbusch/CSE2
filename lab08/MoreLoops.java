@@ -104,6 +104,7 @@ public class MoreLoops {
             for(boolean var = true; var == true;){
                 if( n > 5 || n < 1){
                     System.out.println(n + " is > 5 or <1");
+                    break;
                 }
                 if (n == 1){
                    System.out.print("Case 2 ");

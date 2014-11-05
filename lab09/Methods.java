@@ -12,16 +12,22 @@ public class Methods {
 
     //create the three methods for use within the main method
     public static int getInt(Scanner scan) {
-        int input = 0;
         
+        int input;
         
-            while(!scan.hasNextInt()){
-                System.out.println("You did not enter an int; try again - ");
-                input = scan.nextInt();
-            }
+        if(scan.hasNextInt()){
+            
             input = scan.nextInt();
-        return (input); 
-         
+            return input;
+            
+        }
+        else{
+            System.out.println("You did not enter an int, try again - ");
+            input = getInt(scan);
+            return input;
+        
+            
+        }
     }
     public static int larger(int a, int b) {
         if (a > b) {
