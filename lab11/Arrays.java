@@ -64,14 +64,14 @@ public class Arrays {
             int [] array2 = new int[10];
             
             for(int y = 0; y < array2.length; y++){
-                array2[y] = array1[10-y];
+                array2[y] = array1[y];
             }
             
             //print out the contents of the array-------------------------------
   
             for(int x = 0; x < array1.length; x++){
 
-                System.out.print(array1[x] + "\t" + array2[x]);
+                System.out.print(array1[x] + "\t" + array2[9 - x]);
                 System.out.println("");
             }
 
